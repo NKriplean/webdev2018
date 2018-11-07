@@ -1,1 +1,23 @@
+body{
+	background-color: #FFAA00;
+}
 
+#logo{
+	vertical-align: middle;
+	
+}
+
+#outer
+{
+    width:100%;
+}
+.inner
+{
+    display: inline-block;
+}
+
+.buttonList{
+	background-color: #CE3131;
+	border: black;
+	border-style: 5px;
+}
