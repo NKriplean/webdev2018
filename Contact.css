@@ -1,0 +1,124 @@
+﻿html{
+	background-image: url('images/background.jpg');
+}
+
+body{
+	background-color: #FFAA00;
+	border-style: solid;
+	border-width: 5px;
+	margin: 20px;
+	padding: 20px;
+}
+
+
+#logo{
+	vertical-align: middle;
+}
+
+#outer
+{
+    width:100%;
+}
+.inner
+{
+    display: inline-block;
+}
+
+.buttonList{
+	background-color: #CE3131;
+	border: black;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.container {
+	max-width:400px;
+	width:100%;
+	margin:0;
+	position:relative;
+	
+}
+
+#call {
+	background:rgba(204, 102, 0, 0.9);
+	padding: 9px 15px 15px 15px;
+	text-align: center;
+	font-size: 27px;
+	border-radius: 15px;
+	font-weight: normal;
+}
+
+#phoneIcon {
+	height: 35px;
+	width: 35px;
+	position: relative;
+	top: 8px;
+}
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { 
+	font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; 
+}
+
+#contact {
+	background:rgba(255,255,255, 0.9);
+	padding:25px;
+	margin:20px 0px 0px 0px;
+}
+
+#contact h3 {
+	color: #F96;
+	display: block;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#contact h4 {
+	margin:5px 0 15px;
+	display:block;
+	font-size:13px;
+}
+
+fieldset {
+	border: medium none !important;
+	margin: 0 0 10px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
+	width:90%;
+	border:1px solid #CCC;
+	background:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+}
+
+#contact textarea {
+	height:100px;
+	max-width:100%;
+	resize:none;
+}
+
+#contact button {
+	cursor:pointer;
+	width:100%;
+	border:none;
+	background:#CE3131;
+	color:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+	font-size:15px;
+}
+
+#contact button:hover {
+	background:red;
+}
+
+#contact button[type="submit"]:active { 
+	box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); 
+}
+
+#contact input:focus, #contact textarea:focus {
+	outline:0;
+	border:1px solid #999;
+}
