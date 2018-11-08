@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+		<meta name="keywords" content="HTML">
+		<meta name="author" content="Nick Kriplean">
+		<link rel="stylesheet" href="Menu.css">
+    <title>
+      China One - Menu
+    </title>
+  </head>
+  <body>
+    <h1>
+		<a href="Homepage.html">
+			<img id="logo" src="images/chinaOne.png" alt="ChinaOne">Open 7 Days A Week
+		</a>
+	</h1>
+	<div id="outer">
+		<div class="inner">
+			<form action="Menu.html">
+				<input type="submit" value="Order Online" class="buttonList" />
+			</form>
+		</div>
+		<div class="inner">
+			<form action="Location.html">
+				<input type="submit" value="Location" class="buttonList" />
+			</form>
+		</div>
+		<div class="inner">
+			<form action="Tracker.html">
+				<input type="submit" value="Order Tracker" class="buttonList" />
+			</form>
+		</div>
+		<div class="inner">
+			<form action="About.html">
+				<input type="submit" value="About" class="buttonList" />
+			</form>
+		</div>
+	</div>
+	</br>
+	
+
+	<!--Call database for the list of menus, loading the left side menu selector.
+	After that, populate the menu space with the first menu by default.
+	Change the menu space correctly depending
+	on if the user clicks an different menu. -->
+
+	<div id="outer">
+	
+		<div class="inner">
+			<table>
+				<tr>
+					<th>Menu</th>
+				</tr>
+				<tr>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="inner">
+			<table>
+				<caption>Selected Menu</caption>
+				<tr>
+					<td>Item Number</td>
+					<td>Quantity</td>
+					<td>Price of Item</td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+	
+  </body>
+</html
