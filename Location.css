@@ -1,0 +1,147 @@
+﻿html{
+	background-image: url('images/background.jpg');
+}
+
+a {
+  color: black;
+  text-decoration: none; 
+  font-family: Bookman Old Style; 
+}
+
+body{
+	background-color: #FFAA00;
+	border-style: solid;
+	border-width: 5px;
+	margin: 20px;
+	padding: 20px;
+	font-family: Bookman Old Style; 
+	display: inline-block;
+	width: 93%;
+}
+
+caption{
+	font-weight: bold;
+	font-family: Bookman Old Style; 
+}
+
+hr {
+	border: 1px solid black;
+	background: black;
+	width: 20%;
+	position: relative;
+	right: 550px;
+	bottom: 20px;
+}
+
+h3{
+	font-size: 25px;
+	margin-left: 25px;
+}
+
+#logo{
+	vertical-align: middle;
+	
+}
+
+#outer
+{
+    width:100%;
+}
+.inner
+{
+    display: inline-block;
+}
+
+.buttonList{
+	background-color: #CE3131;
+	border: black;
+	border-style: solid;
+	border-width: 2px;
+	font-family: Bookman Old Style; 
+}
+
+#map {
+	margin-top: 10px;
+	float: left;
+	width: 50%;
+}
+
+#info {
+	width: 440px;
+	height: 375px;
+	background: #cccccc;
+	float: left;
+	margin: 10px 10px 0px 50px;
+	box-shadow: 3px 3px 5px grey;
+}
+
+#dir{
+	text-align: center;
+	width: 200px;
+	height: 40px;
+	color: white;
+	background: #CE3131;
+	border: none;
+	border-radius: 3px;
+	position:relative;
+    top:50%; 
+    left:30%;
+	margin-top: 15px;
+}
+
+.openinghours {
+    font-family:Lucida Console;
+    border-radius:4px;
+    margin:10px;
+    box-shadow: 0 0 10px black;
+    padding:0 10px 0 10px;
+    overflow: hidden;
+    display: inline-block;
+}
+.openinghourscontent {
+    float:left;
+}
+.openinghourscontent h2 {
+    display:block;
+    text-align:center;
+    margin-top:.33em;
+}
+.openinghourscontent button {
+    color:white;
+    font-family:Courier New;
+    font-size:large;
+    font-weight:bolder;
+    background-color:#4679BD;
+    border-radius:4px;
+    width:100%;
+    margin-bottom:10px;
+}
+.today {
+    color: #8AC007;
+}
+.opening-hours-table tr td:first-child {
+    font-weight:bold;
+}
+#open-status {
+    display:block;
+    margin-top:-1em;
+    text-align:center;
+    border:dotted lightgrey 3px;
+}
+.openorclosed:after {
+    content:" open during these hours:";
+}
+.open {
+    color:green;
+}
+.open:after {
+    content:" Open";
+    color: #6C0;
+}
+.closed:after {
+    content:" Closed";
+    color: red;
+}
+.opening-hours-table tr td {
+    padding:5px;
+}
