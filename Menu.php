@@ -6,10 +6,8 @@
 	  
 	try{
 		global $db;
-		$query = $db->prepare("SELECT * FROM Menu");
+		$query = $db->query("SELECT * FROM Menu");
 		$query->execute();
-		$results = $query->fetch(PDO::FETCH_ASSOC);
-		return $results;
 	} catch(PDOException $e){
 		print "<strong>Error retrieving menus</strong><br> $e";
 		die();
@@ -90,12 +88,8 @@ $items = retrieve_items(0);
 	After that, populate the menu space with the first menu by default.
 	Change the menu space correctly depending
 	on if the user clicks an different menu. -->
-
+	<h2>Menu</h2>
 	<div id="outer">
-		<div class="container">
-			<h2>Menu</h2>
-		</div>
-		
 		<nav class="navbar navbar-default">
 			 <div class="container-fluid">
 				<div class="navbar-header">
@@ -103,23 +97,23 @@ $items = retrieve_items(0);
 				</div>
 			<ul class="nav navbar-nav">
 				<?php
-					foreach($menus as $row) {
+					$query = $db->prepare("SELECT * FROM Menu");
+					$query->execute();
+
+					while($row=$query->fetch(PDO::FETCH_ASSOC)) 
+					{
+						extract($row);
 						echo '
 							<li id="'.$row["menuId"].'">
 								<a href="#">'.$row["menuName"].'</a>
 							</li>
-							';
+						';
 					}
 				?>
-				<!--
-				<li class="active"><a href="#">Appetizers</a></li>
-				<li><a href="#">Soup</a></li>
-				<li><a href="#">Vegetable</a></li>
-				<li><a href="#">Pork</a></li>
-				-->
 			</ul>
 		</div>
 		</nav>
+		<span id="menu_details"></span>
 		
 		<div class="inner">
 			<ul id="cart"></ul>
@@ -129,4 +123,22 @@ $items = retrieve_items(0);
 	</div>
 	
   </body>
-</html
+</html>
+<script>
+	$(document).ready(function(){
+		function load_menu_details(id) 
+		{
+			$.ajax({
+				url:"fetch.php", 
+				method:"POST",
+				data:{id:id},
+				success:function(data)
+				{
+					$('#menu_details').html(data);
+				}
+			});
+		}
+
+		load_menu_details(1);
+	});
+</script>
