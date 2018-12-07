@@ -1,4 +1,4 @@
-// JavaScript source code
+(// JavaScript source code
 var delayTime = 2000; // milliseconds
 
 $(function() {
@@ -16,21 +16,20 @@ $('.progressbar li.active:before').on('click', '#tracker' function(event){
 
 function progessTimer(){
 	var timeleft = 30;
-	//Add in if change away from class for the first event | document.getElementById("active1"),styleSheets.border-color = "green";
 	var downloadTimer = setInterval(function(){
 	timeleft--;
+	document.getElementById("countdowntimer").textContent = timeleft;
 	if(timeleft <=20)
 	{
-		document.getElementById("active2").styleSheets.border-color = "green";
-		
+		document.getElementById("")
 	}
 	else if(timeLeft <= 10)
 	{
-		document.getElementById("active3").styleSheets.border-color = "green";
+		
 	}
 	else if(timeleft <= 0)
 	{
-		document.getElementById("active4").styleSheets.border-color = "green";
+		//End of tracker
 	}
 	},delayTime);
 }

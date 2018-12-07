@@ -12,6 +12,10 @@ a:hover {
   text-decoration: none; 
 }
 
+img {
+	float: left;
+}
+
 body{
 	background-color: #FFAA00;
 	border-style: solid;
@@ -22,11 +26,36 @@ body{
 }
 
 h1 {
-	font-size: 20px;
+	font-size: 30px;
 	font-family: Bookman Old Style; 
+	float:left;
+	position: relative;
 }
 
 caption{	font-family: Bookman Old Style; 
+}
+
+nav li {
+	background-color: white;
+}
+
+table {
+	background-color: #f2f2f2;
+	width: 100%;
+}
+
+th {
+	float: left;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+button {
+	background-color: #CE3131;
+	margin-left: 10px;
+	margin-top: 5px;
+	border: none;
+	font-size: 14px;
 }
 
 #logo{
@@ -43,6 +72,11 @@ caption{	font-family: Bookman Old Style;
 {
     display: inline-block;
 
+}
+
+.container div {
+	position: relative;
+	margin: 0px auto;
 }
 
 .buttonList{

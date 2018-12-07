@@ -88,6 +88,7 @@ $items = retrieve_items(0);
 	After that, populate the menu space with the first menu by default.
 	Change the menu space correctly depending
 	on if the user clicks an different menu. -->
+
 	<h2>Menu</h2>
 	<div id="outer">
 		<nav class="navbar navbar-default">
@@ -124,6 +125,7 @@ $items = retrieve_items(0);
 	
   </body>
 </html>
+<!-- ajax -->
 <script>
 	$(document).ready(function(){
 		function load_menu_details(id) 
@@ -139,6 +141,11 @@ $items = retrieve_items(0);
 			});
 		}
 
-		load_menu_details(1);
+		load_menu_details(0);
+
+		$('.nav li').click(function(){
+			var menu_id = $(this).attr("id");
+			load_menu_details(menu_id);
+		});
 	});
 </script>

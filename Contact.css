@@ -5,8 +5,7 @@
 a {
   color: black;
   text-decoration: none; 
-  font-family: Bookman Old Style; 
-  font-weight: bold;
+ 
 }
 
 body{
@@ -15,21 +14,27 @@ body{
 	border-width: 5px;
 	margin: 20px;
 	padding: 20px;
-	font-family: Bookman Old Style; 
+
 }
 
+caption{
+	font-weight: bold;
+}
 
 #logo{
 	vertical-align: middle;
+	font-weight: bold;
 }
 
 #outer
 {
     width:100%;
+
 }
 .inner
 {
     display: inline-block;
+
 }
 
 .buttonList{
@@ -40,6 +45,7 @@ body{
 	font-family: Bookman Old Style; 
 	width: 175px;
 	height:25px;
+	color: black;
 }
 
 .container {
@@ -47,11 +53,10 @@ body{
 	width:100%;
 	margin:0;
 	position:relative;
-	
 }
 
 #call {
-	background:rgba(204, 102, 0, 0.9);
+	background-color: #CE3131;
 	padding: 9px 15px 15px 15px;
 	text-align: center;
 	font-size: 27px;
