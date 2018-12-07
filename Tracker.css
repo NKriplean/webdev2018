@@ -1,0 +1,170 @@
+﻿html{
+	background-image: url('images/background.jpg');
+}
+
+a {
+  color: black;
+  text-decoration: none; 
+  font-family: Bookman Old Style; 
+}
+
+body{
+	background-color: #FFAA00;
+	border-style: solid;
+	border-width: 5px;
+	margin: 20px;
+	padding: 20px;
+	font-family: Bookman Old Style; 
+	display: inline-block;
+	width: 93%;
+	position: relative;
+	z-index: 1;
+}
+
+caption{
+	font-weight: bold;
+	font-family: Bookman Old Style; 
+}
+
+h3{
+	font-size: 25px;
+	margin-left: 25px;
+}
+
+#logo{
+	vertical-align: middle;
+	
+}
+
+#outer
+{
+    width:100%;
+}
+
+.inner
+{
+    display: inline-block;
+}
+
+#text {
+	width: 300px;
+	height: 30px;
+	float: left;
+	font-size: 20px;
+	position: relative;
+	left: 30px;
+}
+
+#orderNum {
+	height: 25px;
+	width: 270px;
+	margin-bottom: 75px;
+	position: relative;
+	top: 15px;
+}
+
+#trackBtn img {
+	height: 50px;
+	width: 75px;
+	padding: 8px;
+	float: left;
+}
+
+#trackBtn {
+	height: 65px; 
+    width: 475px; 
+    position:relative;
+    top:50%; 
+	border-radius: 7px;
+	border: none;
+	margin-top: 75px;
+	margin-bottom: 75px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#trackBtn:hover {
+	background-color: #bfbfbf;
+	cursor: pointer;
+}
+
+#trackBtn  h2 {
+	font-weight: bold;
+	position: relative;
+	right: 80px;
+	top: 8px;
+	font-size: 18px;
+	font-family: Bookman Old Style; 
+}
+
+#btn div {
+	text-align: center;
+}
+
+.buttonList{
+	background-color: #CE3131;
+	border: black;
+	border-style: solid;
+	border-width: 2px;
+	font-family: Bookman Old Style; 
+	width: 175px;
+	height:25px;
+}
+
+.container {
+	width: 100%;
+}
+
+.progressbar {
+	counter-reset: step;
+}
+
+.progressbar li {
+	list-style-type: none;
+	float: left;
+	width: 25%;
+	position: relative;
+	text-align: center;
+	font-size: 18px;
+}
+
+.progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 40px;
+	height: 40px;
+	line-height: 40px; 
+	border: 3px solid #ddd;
+	display: block;
+	text-align: center;
+	margin: 0 auto 10px auto;
+	border-radius: 50%;
+	background-color: white;
+}
+
+.progressbar li:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background-color: #ddd;
+	top: 20px;
+	left: -50%;
+	z-index: -1;
+}
+
+.progressbar li:first-child:after {
+	content: none;
+}
+
+.progressbar li.active {
+	color: green;
+}
+
+.progressbar li.active:before{
+	border-color: green;
+}
+
+.progressbar li.active + li:after {
+		background-color: green;
+}

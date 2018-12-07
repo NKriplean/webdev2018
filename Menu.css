@@ -30,10 +30,12 @@ caption{
 #outer
 {
     width:100%;
+
 }
 .inner
 {
     display: inline-block;
+
 }
 
 .buttonList{
@@ -42,4 +44,7 @@ caption{
 	border-style: solid;
 	border-width: 2px;
 	font-family: Bookman Old Style; 
+	width: 175px;
+	height:25px;
+	color: black;
 }
