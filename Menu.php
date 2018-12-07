@@ -6,7 +6,9 @@
 	  
 	try{
 		global $db;
-		$results = $db->query("SELECT * FROM Menu");
+		$query = $db->prepare("SELECT * FROM Menu");
+		$query->execute();
+		$results = $query->fetch(PDO::FETCH_ASSOC);
 		return $results;
 	} catch(PDOException $e){
 		print "<strong>Error retrieving menus</strong><br> $e";
@@ -26,8 +28,8 @@
 	}
   }
 
-  $menus = retrieve_menus();
-  $items = retrieve_items(0);
+$menus = retrieve_menus();
+$items = retrieve_items(0);
 
 ?>
 
@@ -39,9 +41,9 @@
 		<meta name="keywords" content="HTML">
 		<meta name="author" content="Nick Kriplean">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" href="Menu.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="Menu.css">
     <title>
       China One - Menu
     </title>
@@ -50,7 +52,7 @@
   <body>
     <h1>
 		<a href="Homepage.html">
-			<img id="logo" src="images/chinaOne.png" alt="ChinaOne">Open 7 Days A Week
+			<img id="logo" src="images/chinaOne.png" alt="ChinaOne"><h1>Open 7 Days A Week</h1>
 		</a>
 	</h1>
 	<div id="outer">
@@ -93,36 +95,31 @@
 		<div class="container">
 			<h2>Menu</h2>
 		</div>
-
-		<!--
-		<div class="inner">
-			<table>
-				<tr>
-					<th>Menu</th>
-				</tr>
-				<tr>
-					<?php for($i = 0; $i < $menus.length; $i++)
-						{
-							?><td><button On click to get items for this menu(correct menu from retrieve_items(menu[0][i]))-><?php $menus[1][i] ?></button></td><?php 
-						}
-					?>
-				</tr>
-			</table>
-		</div>
 		
-		<div class="inner">
-			<table>
-				<caption>Selected Menu</caption>
-				<tr>
-					<?php for($i = 0; $i < $menus.length; $i++)
-						{
-							?><td><button onclick=addToCart()><?php $items[2][i] ?> <?php $items[3][i] ?></button></td><?php 
-						}
-					?>
-				</tr>
-			</table>
+		<nav class="navbar navbar-default">
+			 <div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">China One Menu</a>
+				</div>
+			<ul class="nav navbar-nav">
+				<?php
+					while($row = $menus) {
+						echo '
+							<li id="'.$row["menuId"].'">
+								<a href="#">'.$row["menuName"].'</a>
+							</li>
+							';
+					}
+				?>
+				<!--
+				<li class="active"><a href="#">Appetizers</a></li>
+				<li><a href="#">Soup</a></li>
+				<li><a href="#">Vegetable</a></li>
+				<li><a href="#">Pork</a></li>
+				-->
+			</ul>
 		</div>
-		-->
+		</nav>
 		
 		<div class="inner">
 			<ul id="cart"></ul>

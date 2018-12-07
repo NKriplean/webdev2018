@@ -8,6 +8,10 @@ a {
   font-family: Bookman Old Style; 
 }
 
+a:hover {
+  text-decoration: none; 
+}
+
 body{
 	background-color: #FFAA00;
 	border-style: solid;
@@ -17,9 +21,12 @@ body{
 	font-family: Bookman Old Style; 
 }
 
-caption{
-	font-weight: bold;
+h1 {
+	font-size: 20px;
 	font-family: Bookman Old Style; 
+}
+
+caption{	font-family: Bookman Old Style; 
 }
 
 #logo{
