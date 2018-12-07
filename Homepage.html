@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+		<meta name="keywords" content="HTML">
+		<meta name="author" content="Nick Kriplean">
+		<link rel="stylesheet" href="Homepage.css">
+    <title>
+      China One - Homepage
+    </title>
+  </head>
+  <body>
+    <h1>
+		<a href="Homepage.html">
+			<img id="logo" src="images/chinaOne.png" alt="ChinaOne">Open 7 Days A Week
+		</a>
+	</h1>
+		<div id="outer">
+		<div class="inner">
+			<form action="Homepage.html">
+				<input type="submit" value="Home" class="buttonList" />
+			</form>
+		</div>
+		<div class="inner">
+			<form action="Menu.php">
+				<input type="submit" value="Order Online" class="buttonList" />
+			</form>
+		</div>
+		<div class="inner">
+			<form action="Location.html">
+				<input type="submit" value="Location" class="buttonList" />
+			</form>
+		</div>
+		<div class="inner">
+			<form action="Tracker.html">
+				<input type="submit" value="Order Tracker" class="buttonList" />
+			</form>
+		</div>
+		<div class="inner">
+			<form action="Contact.html">
+				<input type="submit" value="Contact Us" class="buttonList" />
+			</form>
+		</div>
+	</div>
+	</br>
+	<div class="foodSlides">
+		<img class="mySlides" src="images/food1.jpg" alt="food1">
+		<img class="mySlides" src="images/food2.jpg" alt="food2">
+		<img class="mySlides" src="images/food3.jpg" alt="food3">
+		<img class="mySlides" src="images/food4.jpg" alt="food4">
+	</div>
+	
+	<script>
+		var slideIndex = 0;
+		carousel();
+
+		function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none"; 
+			}
+			slideIndex++;
+			if (slideIndex > x.length) {slideIndex = 1} 
+			x[slideIndex-1].style.display = "block"; 
+			setTimeout(carousel, 3000); // Change image every 3 seconds
+	}
+	</script>
+	
+  </body>
+</html

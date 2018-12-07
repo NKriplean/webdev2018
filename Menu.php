@@ -1,46 +1,31 @@
 <?php 
 
-  require_once(credentials.php);
+  include('db.php');
 
-  function db_connect() {
-	try{
-		$db = new PDO("mysql:dbname=DB_NAME;host=DB_SERVER,DB_USER,DB_PWD");
-	} catch (PDOException $e) {
-		print "Error!<br/>";
-		die();
-	}
-  }
-
-  function db_disconnect() {
-
-	$db = null;
-
-  }
-  
   function retrieve_menus() {
 	  
 	try{
+		global $db;
 		$results = $db->query("SELECT * FROM Menu");
 		return $results;
 	} catch(PDOException $e){
-		print "Error!<br/>";
+		print "<strong>Error retrieving menus</strong><br> $e";
 		die();
 	}
-	  
+	 
   }
   
-  function retrieve_items($menu)
-  {
+  function retrieve_items($menu) {
 	try{
+		global $db;
 		$results = $db->query("SELECT * FROM Items WHERE menuId = " + $menu);
 		return $results;
 	} catch(PDOException $e){
-		print "Error!<br/>";
+		print "<strong>Error retrieving items</strong><br> $e";;
 		die();
 	}
   }
-  
-  $db = db_connect();
+
   $menus = retrieve_menus();
   $items = retrieve_items(0);
 
