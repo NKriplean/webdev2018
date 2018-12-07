@@ -103,7 +103,7 @@ $items = retrieve_items(0);
 				</div>
 			<ul class="nav navbar-nav">
 				<?php
-					while($row = $menus) {
+					foreach($menus as $row) {
 						echo '
 							<li id="'.$row["menuId"].'">
 								<a href="#">'.$row["menuName"].'</a>
