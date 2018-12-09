@@ -2,7 +2,7 @@
 
 include('db.php');
 
-  function retrieve_menus() {
+  function retrieve_menus($emailAddress, $phoneNumber, $contactMessage) {
 	  
 	try{
 		global $db;
