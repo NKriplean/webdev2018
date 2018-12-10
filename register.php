@@ -7,12 +7,18 @@
       $password = $_POST['password']; 
 	  $hash = '23dc243nf2913fdn0cqe2'; //Random hash | Built in method?
 	  
-	  if (!preg_match('/^(?=[a-z])(?=[A-Z])[a-zA-Z]{8,}$/', $password))
-	  {
-		  print("Password must be 8 characters long, contain one capital letter, and one non-number/non-letter character. ");
-	  }	
-	  else
-	  {
+	$chars = preg_match('@[a-z]@', $password);
+    $number = preg_match('@[0-9]@', $password);
+    $specialChars = preg_match('@[^\w]@', $password);
+
+    if(!$chars || !$number || !$specialChars || strlen($password) < 8) {
+            echo "<ul>
+                <li>Your password must contain a number</li>
+                <li>Your password must contain a special character</li>
+                <li>Your password must be 8 characters in length</li>
+            </ul>";
+    }
+	else {
 		$encrypted = crypt($password,$hash);
 		registerUser($username,$encrypted);
 		header('Location: Homepage.html');
