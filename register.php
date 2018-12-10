@@ -1,5 +1,5 @@
 <?php
-  include('db.php')
+  include('db.php');
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
@@ -9,12 +9,12 @@
 	  
 	  if (!preg_match('/^(?=[a-z])(?=[A-Z])[a-zA-Z]{8,}$/', $password))
 	  {
-		  alert("Password must be 8 characters long, contain one capital letter, and one non-number/non-letter character. ");
+		  print("Password must be 8 characters long, contain one capital letter, and one non-number/non-letter character. ");
 	  }	
 	  else
 	  {
 		$encrypted = crypt($password,$hash);
-		registerUser($username,password);
+		registerUser($username,$encrypted);
 		header('Location: Homepage.html');
 	  }
    }
@@ -23,9 +23,9 @@
 	  
 	try{
 		global $db;
-		$query = $db->query( "INSERT INTO Users (username, password) VALUES ('$username', '$encrypted')";
+		$query = $db->query( "INSERT INTO Users (username, password) VALUES (" . $username . ", " . $password);
 	} catch(PDOException $e){
-		print "<strong>Error on login</strong><br> $e";
+		print "<strong>Error on login</strong><br>";
 		die();
 	}
 	 
@@ -35,6 +35,7 @@
    
    <head>
       <title>Registration Page</title> 
+	  <link rel="stylesheet" href="Login.css">
    </head>
    
    <body>
