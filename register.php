@@ -1,4 +1,5 @@
 <?php
+  include('db.php')
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
@@ -13,10 +14,22 @@
 	  else
 	  {
 		$encrypted = crypt($password,$hash);
-		$sql = "INSERT INTO Users (username, password) VALUES ('$username', '$encrypted')";
-		//Needs actual hookup to db still
+		registerUser($username,password);
+		header('Location: Homepage.html');
 	  }
    }
+   
+   function registerUser($username, $password) {
+	  
+	try{
+		global $db;
+		$query = $db->query( "INSERT INTO Users (username, password) VALUES ('$username', '$encrypted')";
+	} catch(PDOException $e){
+		print "<strong>Error on login</strong><br> $e";
+		die();
+	}
+	 
+  }
 ?>
 <html>
    

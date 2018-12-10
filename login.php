@@ -1,5 +1,7 @@
 <?php
-   
+  include('db.php'); 
+  
+  
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
@@ -9,9 +11,27 @@
 	  
 	  $encrypted = crypt($passcode,$hash);
       
-      $sql = "SELECT id FROM Users WHERE username = '$username' and password = '$encrypted'"; //TODO: Change what is being pulled in?
-      //Needs actual hookup to db still
+      $query = loginUser($username,$encrypted)
+	  if(sizeOf($query) == 1)
+	  {
+		  header( 'Location: Homepage.html' ) 
+	  }
    }
+   
+   
+
+  function loginUser($username, $encrypted) {
+	  
+	try{
+		global $db;
+		$query = $db->query( "SELECT id FROM Users WHERE username = $username and password = $password");
+		return $query
+	} catch(PDOException $e){
+		print "<strong>Error on login</strong><br> $e";
+		die();
+	}
+	 
+  }
 ?>
 <html>
    
