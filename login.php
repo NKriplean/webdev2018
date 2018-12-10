@@ -9,7 +9,7 @@
 	  
 	  $encrypted = crypt($passcode,$hash);
       
-      $sql = "SELECT id FROM users WHERE username = '$username' and password = '$encrypted'";
+      $sql = "SELECT id FROM Users WHERE username = '$username' and password = '$encrypted'"; //TODO: Change what is being pulled in?
       //Needs actual hookup to db still
    }
 ?>

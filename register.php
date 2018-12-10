@@ -13,7 +13,7 @@
 	  else
 	  {
 		$encrypted = crypt($password,$hash);
-		$sql = "INSERT username, password VALUES ('$username', '$encrypted')";
+		$sql = "INSERT INTO Users (username, password) VALUES ('$username', '$encrypted')";
 		//Needs actual hookup to db still
 	  }
    }
