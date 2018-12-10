@@ -19,6 +19,10 @@ body{
 	height: 600px;
 }
 
+#logo{
+	vertical-align: middle;
+}
+
 .text {
 	width: 200px;
 	height: 30px;

@@ -40,7 +40,15 @@
 	  <link rel="stylesheet" href="Login.css">
    </head>
    
+   
    <body>
+	<span>
+		<h1>
+			<a href="Homepage.html">
+				<img id="logo" src="images/chinaOne.png" alt="ChinaOne">
+			</a>
+		</h1>
+	</span>
        <form action = "" method = "post">
            <label class="label">Username:</label><input class="text" type = "text" name = "username" /><br />
            <label class="label">Password:</label><input class="text" type = "password" name = "password" /><br />
